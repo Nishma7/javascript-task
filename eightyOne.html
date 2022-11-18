@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        .wrap{
+            margin: 0 auto;
+            background-color: black;
+            width: 200px;
+            height:250px ;
+            text-align: center;
+            padding: 10px;
+            color: cornsilk;
+            border:2px solid black;
+        }
+        #c{
+            background-color: yellow;
+            border-radius: 50%;
+        }
+        #slash{
+            background-color: tomato;
+            border-radius: 50%;
+        }
+        #mul{
+            background-color: violet;
+            border-radius: 50%;
+        }
+        #plus{
+            background-color: green;
+            border-radius: 50%;
+        }
+        #equal{
+            background-color: red;
+            border-radius: 10%;
+            width: 85px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <form name="cal">
+            <input type="text" name="display">
+            <br><br>
+            <input type="button" value="1" onclick="cal.display.value+='1'">
+            <input type="button" value="2" onclick="cal.display.value+='2'">
+            <input type="button" value="3" onclick="cal.display.value+='3'">
+            <input type="reset" value="c" onclick="cal.display.value+='c'" id="c">
+            <br><br>
+            <input type="button" value="4" onclick="cal.display.value+='4'">
+            <input type="button" value="5" onclick="cal.display.value+='5'">
+            <input type="button" value="6" onclick="cal.display.value+='6'">
+            <input type="button" value="/" onclick="cal.display.value+='/'" id="slash">
+            <br><br>
+            <input type="button" value="7" onclick="cal.display.value+='7'">
+            <input type="button" value="8" onclick="cal.display.value+='8'">
+            <input type="button" value="9" onclick="cal.display.value+='9'">
+            <input type="button" value="*" onclick="cal.display.value+='*'" id="mul">
+            <br><br>
+            <input type="button" value="%" onclick="cal.display.value+='%'">
+            <input type="button" value="0" onclick="cal.display.value+='0'">
+            <input type="button" value="-" onclick="cal.display.value+='-'">
+            <input type="button" value="+" onclick="cal.display.value+='+'" id="plus">
+            <br><br>
+            <input type="button" value="=" onclick="cal.display.value = eval(cal.display.value)" id="equal">
+
+            <input type="button" value="." onclick="cal.display.value+='.'">
+
+
+        </form>
+    </div>
+</body>
+</html>

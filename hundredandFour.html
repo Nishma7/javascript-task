@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Electricity Bill</title>
+</head>
+<body>
+    <script>
+        var units=prompt("Enter the Units");
+        var amount=0;
+        function ebBill(units){
+            debugger;
+        if(units <= 100){
+            console.log("Free");
+        }
+        else if(units >=101 && units <=200){
+            amount = units*1;
+            console.log(amount);
+        }
+        else if(units >=201 && units <=300){
+            amount =(100*0)+(100*1);
+            amount +=(units-200)*2.5;
+            console.log(amount);
+        }
+        else if(units >=301 && units <=400){
+            amount = (100*0)+(100*1)+(100*2.5);
+            amount +=(units-300)*3.5;
+            console.log(amount);
+        }
+        else{
+            console.log("The amount is most");
+        }
+        console.log(amount);
+    }
+    ebBill(units);
+    </script>
+    
+</body>
+</html>

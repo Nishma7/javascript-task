@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3x2 Matrix Subtraction</title>
+</head>
+<body>
+    <script>
+        var A = [[3,3],[3,3],[4,4]];
+        var B = [[2,2],[2,2],[2,2]];
+        var rowA = A.length;
+        var rowB = B.length;
+        var colA = A[0].length;
+        var colB = B[0].length;
+        var result=[];
+        if(rowA == rowB && colA==colB){
+            for(i=0;i<rowA;i++){
+                for(j=0;j<colB;j++){
+                    result =A[i][j]-B[i][j];
+                    document.write(result);
+                }
+                result =[];
+                document.write("<br>")
+            }
+        }
+        else{
+            document.write(`Logic is False`)
+        }
+    </script>
+    
+</body>
+</html>

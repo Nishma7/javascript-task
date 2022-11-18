@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Array Values</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        const numbers = [[3, 2], [1], [4, 12]];
+        let txt = "";
+        var b =[...numbers[0],...numbers[1],...numbers[2]];
+        console.log(b);
+        var c=b.reduce(myFunction);
+        var result =`The Addition of [[3,2],[1],[4,12]] is ${c}`;
+        document.getElementById("demo").innerHTML = result;
+        function myFunction(total,value) {
+            return total+value
+        }
+    </script>
+
+</body>
+
+</html>

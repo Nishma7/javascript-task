@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--29.Global Scope:-->
+    <script>
+        var dogSound = 'Woof';
+        var animalSound = () => {
+            console.log(dogSound); //woof
+        }
+        animalSound();
+        console.log(dogSound);//woof
+    </script>
+</body>
+</html>

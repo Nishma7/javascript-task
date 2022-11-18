@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        E D C B A
+        E D C B
+        E D C
+        E D 
+        E
+        */
+
+        var n=5;
+        var string = "";
+        for(var i=1;i<=n;i++){
+            for(var j=0;j<n-i+1;j++){
+                string +=String.fromCharCode(69-j);
+            }
+            string+="<br>";
+        }
+        document.write(string);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+   <!--16.(a+b-c)2 = a2+b2+c2+2ab-2bc-2ca-->
+<h1 id="demo"></h1>
+<script>
+    function formula(a,b,c){
+        var LHS = (a+b-c)**2;
+        console.log(LHS);
+        var RHS = (a**2) + (b**2)+(c**2)+(2*a*b)-(2*b*c)-(2*c*a);
+        console.log(RHS);
+        var result = (LHS == RHS)? "Verified" : "Logic is false";
+        document.getElementById('demo').innerHTML = result;
+    }
+    formula(2,2,3);
+</script>
+
+</body>
+</html>

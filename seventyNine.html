@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #e8eaec;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            color: black;
+            text-align: center;
+            position: relative;
+            top: 50px;
+        }
+
+        #mainbox {
+            height: 70px;
+            width: 300px;
+            background-color: #e8eaec;
+            box-shadow: 4px 4px 8px rgb(189 200 213), -4px -4px 8px rgb(255 255 255);
+            border: none;
+            position: relative;
+            top: 100px;
+            left: 520px;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        input {
+            height: 40px;
+            width: 150px;
+            background-color: #e8eaec;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            box-shadow: 4px 4px 8px rgb(189 200 213), -4px -4px 8px rgb(255 255 255);
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-left: 8px;
+            border: none;
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            background-color: #e8eaec;
+            border: none;
+            box-shadow: 4px 4px 8px rgb(189 200 213), -4px -4px 8px rgb(255 255 255);
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+        #container {
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+            position: relative;
+            top: 120px;
+            left: 525px;
+        }
+
+        #container div {
+            height: 70px;
+            width: 70px;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border: none;
+            margin-top: 10px;
+            text-align: center;
+            box-shadow: 4px 4px 8px rgb(189 200 213), -4px -4px 8px rgb(255 255 255);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Age Calculator</h2>
+    <div id="mainbox">
+        <input type="date" id="date">
+        <button type="button" onclick="ageCalculate()">Calculate</button>
+    </div>
+    <div id="container" >
+        <div>
+            <span id="years">-</span>
+            <p>Year</p>
+        </div>
+        <div>
+            <span id="months">-</span>
+            <p>Month</p>
+        </div>
+        <div>
+            <span id="days">-</span>
+            <p>Days</p>
+        </div>
+    </div>
+    <script>
+        const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 30, 31];
+        function ageCalculate() {
+            var today = new Date();
+            var inputDate = new Date(document.getElementById('date').value);
+            var birthMonth, birthDate, birthYear;
+            var birthDetails =
+            {
+                date: inputDate.getDate(),
+                month: inputDate.getMonth() + 1,
+                year: inputDate.getFullYear()
+            }
+            var currentYear = today.getUTCFullYear();
+            var currentMonth = today.getMonth();
+            var currentDate = today.getDate();
+
+            leapChecker(currentYear);
+            if (birthDetails.year > currentYear ||
+                (birthDetails.month > currentMonth && birthDetails.year == currentYear) ||
+                (birthDetails.date > currentDate && birthDetails.month == currentMonth && birthDetails.year == currentYear)) {
+                alert("Not Born Yet");
+                displayResult("-", "-", "-");
+                return
+            }
+            birthYear = currentYear - birthDetails.year;
+            if (currentMonth >= birthDetails.month) {
+                birthMonth = currentMonth - birthDetails.month;
+            }
+            else {
+                birthYear--;
+                birthMonth = 12 + currentMonth - birthDetails.month;
+            }
+            if (currentDate >= birthDetails.date) {
+                birthDate = currentDate - birthDetails.date;
+            }
+            else {
+                birthMonth--;
+                var days = months[currentMonth - 2];
+                birthDate = days + currentDate - birthDetails.date;
+                if (birthMonth < 0) {
+                    birthMonth = 11;
+                    birthYear--;
+                }
+            }
+            displayResult(birthDate, birthMonth, birthYear);
+        }
+        function displayResult(bDate, bMonth, bYear) {
+            document.getElementById('years').textContent = bYear;
+            document.getElementById('months').textContent = bMonth;
+            document.getElementById('days').textContent = bDate;
+        }
+        function leapChecker(year) {
+            if (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)) {
+                months[1] = 29;
+            }
+            else {
+                months[1] = 28;
+            }
+        }
+    </script>
+</body>
+
+</html>

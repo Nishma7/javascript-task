@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--15. a2- b2 = (a+b)(a-b)-->
+    <script>
+        function formula(a,b){
+            var LHS = a**2 - b**2;
+            var RHS = (a+b)*(a-b);
+            var result = (LHS == RHS) ? "Verified" : "Logic is false";
+            console.log(result);
+        }
+        formula(3,3);
+    </script>
+</body>
+</html>

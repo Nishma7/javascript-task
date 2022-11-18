@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            border:2px solid red;
+            color: white;
+            font-size: 40px;
+            padding-top: 40px;
+            
+        }
+    </style>
+</head>
+<body>
+    <!--43.Traffic Light using switch case:-->
+    <div id="box"></div>
+    <script>
+        var color = 'yellow';
+        switch(color){
+            case 'green':
+                console.log("GO");
+                document.getElementById('box').style.backgroundColor = 'green';
+                document.getElementById('box').innerHTML = 'GO';
+                break;
+            case 'red':
+                console.log("STOP");
+                document.getElementById('box').style.backgroundColor = 'red';
+                document.getElementById('box').innerHTML = 'STOP';
+                break;
+            case 'yellow':
+                console.log("WAIT");
+                document.getElementById('box').style.backgroundColor = 'yellow';
+                document.getElementById('box').innerHTML = 'WAIT';
+                break;
+            default:
+                console.log("DOT MATCH");           
+        }
+    </script>
+</body>
+</html>

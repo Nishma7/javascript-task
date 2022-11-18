@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classical Inheritance</title>
+</head>
+<body>
+    <script>
+        class Shape{
+            constructor(name2){
+                this.name = name2;
+            }
+            getName(){
+                console.log("inside getName Parent", this.name);
+                return this.name;
+            }
+            setName(name){
+                console.log("inside setName Parent", name);
+                this.name = name;
+            }
+        }
+        let s = new Shape("Circle")
+        let x = new Shape("sdfsdf");
+        s.getName();
+
+     class Circle extends Shape{
+            constructor(point){
+                super("michael");
+                this.point= point;
+            }
+            getPoint(){
+                return this.point;
+            }
+            toString(){
+                console.log(this.point);
+                return super.getName()+this.point;
+            }
+        }
+        let circle = new Circle({x:0,y:0});
+        circle.getName();
+        circle.toString();
+    </script>
+    
+</body>
+</html>

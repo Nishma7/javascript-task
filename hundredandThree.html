@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+   <style>
+    *{
+    box-sizing: border-box;
+}
+#box{
+    width: 300px;
+    height: 450px;
+    margin:0 auto;
+    box-shadow: 2px 2px 4px 4px #ddd;
+    font-family: sans-serif;
+    padding: 10px;
+}
+h3{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+li{
+    padding-bottom: 10px;
+}
+label{
+    color: gray;
+}
+input{
+    padding:5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#submit{
+    color: honeydew;
+    background-color: royalblue;
+    width: 205px;
+    height: 35px;
+}
+#nameError{
+    color: red;
+    font-size: small;
+}
+#emailError{
+    color: red;
+    font-size: small;
+}
+#passWordError{
+    color: red;
+    font-size: small;
+}
+#confirmpswError{
+    color: red;
+    font-size: small;
+}
+   </style>   
+</head>
+<body>
+    <div id="box">
+        <h3>Register With Us</h3>
+        <form   name="myForm" onsubmit="return submitForm()">
+            <ul>
+                <li>
+                    <label for="uname">Username</label>
+                </li>
+                <li>
+                    <input type="text" id="uname"  name="uname" placeholder="Enter username" size="25">
+                </li>
+                <li id="nameError"></li>
+                <li>
+                    <label for="email">Email</label>
+                </li>
+                <li>
+                    <input type="text" id="email"  name="email" placeholder="Enter email" size="25">
+                </li>
+                <li id="emailError"></li>
+                <li>
+                    <label for="password">Password</label>
+                </li>
+                <li>
+                    <input type="password" id="password"  name="password" placeholder="Enter password" size="25">
+                </li>
+                <li id="passWordError"></li>
+                <li>
+                    <label for="confirm">Confirm Password</label>
+                </li>
+                <li>
+                    <input type="password" id="confirm"  name="confirm" placeholder="Enter password again" size="25">
+                </li>
+                <li id="confirmpswError"></li>
+                <li>
+                    <input type="submit" value="Submit" id="submit">
+                </li>
+            </ul>
+        </form>
+    </div>
+    
+    <script>
+        function submitForm() {
+    var name = document.getElementById('uname').value;
+    var text = /^[A-Z || a-z]+$/;
+    var Email = document.getElementById("email").value;
+    var emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var password = document.getElementById("password").value;
+    var passwordPattern = /[A-Za-z0-9]{6}/;
+    var confirmpsw = document.getElementById("confirm").value;
+
+    if (name === "") {
+        document.getElementById('nameError').innerHTML = "Name must be filled out";
+        document.getElementById('uname').style.border = "2px solid red";
+        return false;
+    }
+    else if (!name.match(text)) {
+        document.getElementById('nameError').innerHTML = "Text Only";
+        document.getElementById('uname').style.border = "2px solid red";
+        return false;
+
+    }
+    else {
+        document.getElementById('uname').style.border = "2px solid green";
+        document.getElementById('nameError').style.display = "none";
+        // return false;
+
+    }
+    if (Email === "") {
+        document.getElementById("emailError").innerHTML = "Please Enter Your Email";
+        document.getElementById('email').style.border = "2px solid red";
+        return false;
+
+    }
+    else if (!Email.match(emailPattern)) {
+        document.getElementById("emailError").innerHTML = "Email is not valid";
+        document.getElementById('email').style.border = "2px solid red";
+        return false;
+    }
+    else {
+        document.getElementById('email').style.border = "2px solid green";
+        document.getElementById('emailError').style.display = "none";
+
+    }
+    if (password == "") {
+        document.getElementById("passWordError").innerHTML = "Please Enter the password";
+        document.getElementById('password').style.border = "2px solid red";
+        return false;
+    }
+    else if (!password.match(passwordPattern)) {
+        document.getElementById("passWordError").innerHTML = "Pleaseword must be at least 6 characters";
+        document.getElementById('password').style.border = "2px solid red";
+        return false;
+    }
+    else {
+        document.getElementById('password').style.border = "2px solid green";
+        document.getElementById('passWordError').style.display = "none";
+    }
+
+    if (confirmpsw == "") {
+        document.getElementById("confirmpswError").innerHTML = "Please Enter the Confirm password";
+        document.getElementById('confirm').style.border = "2px solid red";
+        return false;
+    }
+
+    else if (!confirmpsw.match(password)) {
+        document.getElementById("confirmpswError").innerHTML = "Please Enter the Correct password";
+        document.getElementById('confirm ').style.border = "2px solid red";
+        return false;
+    }
+
+    else {
+        document.getElementById('confirm').style.border = "2px solid green";
+        document.getElementById('confirmpswError').style.display = "none";
+    }
+    //return false;
+}
+    </script>
+</body>
+</html>

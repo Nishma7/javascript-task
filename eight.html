@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--8.Find the greatest number of a = 39 and b=23 ,c=45 ,d=987 using ternary operator?-->
+    <script>
+        var a = 39;
+        var b = 23;
+        var c = 45;
+        var d = 978;
+        var max1 = (a>b)?a:b;
+        var max2 = (max1<c)?c:max1;
+        var max = (max2<d)?d:max2;
+        console.log(max);
+
+        /*another Method:
+
+        console.log((a>b && a>c && a>d)? a : (b>a && b>c && b>d)? b: (c>a && c>b && b>d)?c:d);
+        */
+
+        /*
+        console.log((a>b && a>c && a>d) ? a: (b>c && b>d)? b:(c>d)?c:d);
+        */
+    </script>
+</body>
+</html>

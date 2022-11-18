@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--13.(a+b)2 = a2+ 2ab + b2-->
+<h1 id="demo"></h1>
+<script>
+    function addition(a,b){
+        var LHS = (a+b)**2;
+        var RHS = a**2 + 2*a*b + b**2;
+        var result = (LHS == RHS)? "Verified" : "Logic is false";
+        document.getElementById('demo').innerHTML = result;
+    }
+    addition(2,2);
+</script>
+
+</body>
+</html>

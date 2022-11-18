@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Matrix Subtraction</title>
+</head>
+
+<body>
+    <script>
+        var c = [[1, 2], [3, 4]];
+        var d = [[1, 2], [2, 1]];
+        var rowC = c.length;
+        var colC = c[0].length;
+        var rowD = d.length;
+        var colD = d[0].length;
+        if (rowC == rowD && colC == colD) {
+            for (var i = 0; i < rowC; i++) {
+                for (var j = 0; j < rowD; j++) {
+                    var subtraction = "";
+                    subtraction = c[i][j] - d[i][j];
+                    document.write(subtraction);
+                }
+                document.write("<br>");
+
+            }
+        }
+        else {
+            document.write("Logic is False");
+        }
+    </script>
+
+</body>
+
+</html>

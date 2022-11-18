@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        A
+        B C
+        D E F
+        G H I J
+        K L M N O
+        */
+       var n = 5;
+       var string = "";
+       var count =0;
+       for(var i=1;i<=n;i++){
+        for(var j=0;j<i;j++){
+            string +=String.fromCharCode(count+65);
+            count++;
+        }
+        string +="<br>";
+       }
+       document.write(string);
+    </script>
+</body>
+</html>

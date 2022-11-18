@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Count the number of words in a string</title>
+</head>
+<body>
+    <script>
+        var str ='Coding with javascript is fun!';
+        var b=str.length;
+        console.log(b);
+        var count=0;
+        for(var i=0;i<str.length;i++){
+            if(str[i]== " " && str[i-1] !== " "){
+                count = count + 1;
+            }
+        }
+        count =count+1;
+        console.log(count);
+    </script>
+    
+</body>
+</html>

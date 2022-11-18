@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shirt Ad</title>
+    <style>
+        #container{
+            border: 1px solid blue;
+            height: 550px;
+            width: 500px;
+        }
+        #box{
+            border:inherit;
+            height: 75%;
+            width: 100%;
+        }
+        .first{
+            border: inherit;
+            height:24%;
+            width: 120px ;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+      <div id="box">
+          <img src="../Questions/images/tshirtBlue.jpg" alt="blueShirt" height="100%" width="100%" id="imagesChange">
+      </div>
+      <button type="button" onclick="myFunction()">
+         <img src="../Questions/images/tshirtBlue.jpg" alt="blue" height="100px" width="100px">
+      </button>
+      <button type="button" onclick="greenShirt()">
+        <img src="../Questions/images/tshirtGreen.jpg" alt="green" height="100px" width="100px">
+    </button>
+    <button type="button" onclick="pinkShirt()">
+        <img src="../Questions/images/tshirtPink.jpg" alt="pink" height="100px" width="100px">
+    </button>
+    <button type="button" onclick="ashShirt()">
+        <img src="../Questions/images/tshittash.jpg" alt="pink" height="100px" width="100px">
+    </button>
+      
+    </div>
+    <script>
+        
+
+function myFunction(){
+   document.getElementById("imagesChange").src="../Questions/images/tshirtBlue.jpg";
+  
+}
+
+function greenShirt(){
+   document.getElementById("imagesChange").src="../Questions/images/tshirtGreen.jpg";
+}
+
+function pinkShirt(){
+   document.getElementById("imagesChange").src="../Questions/images/tshirtPink.jpg";
+}
+
+function ashShirt(){
+   document.getElementById("imagesChange").src="../Questions/images/tshittash.jpg";
+}
+
+
+    </script>
+</body>
+</html>

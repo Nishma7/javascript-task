@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Matrix Multiplication 1x3 & 3x1</title>
+</head>
+<body>
+    <script>
+        var A =[[1,1,1]];
+        var B = [[2],[2],[2]];
+        var rowA = A.length;
+        var rowB = B.length;
+        var colA = A[0].length;
+        var colB = B[0].length;
+        var result = [];
+        var k=0;
+        var l=1;
+        var m=2
+        if(colA == rowB){
+            for(i=0;i<rowA;i++){
+                for(j=0;j<colB;j++){
+                   
+                    result =A[i][k]*B[k][j]+A[i][l]*B[l][j]+A[i][m]*B[m][j];
+                    document.write(result)
+                    
+                }
+                
+                result =[];
+                document.write("<br>");  
+            }
+        }
+        else{
+            document.write(`Logic is false`);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Glowing Bulb</title>
+    <style>
+        .wall{
+            width: 250px;
+            height: 300px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        }
+        #bulb-off:hover{
+            background-image: url("images/images.jpg");
+
+        }
+        button{
+            height: 100px;
+            width: 50px;
+            background-color: rgb(173, 98, 98);
+            color:white
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+
+    <!--<div class="wall">
+        <button onclick="document.getElementById('bulb-on').src='./images/light on.jpg'">Turn on the bulb</button>
+        <img src="images/images.jpg" alt="bulbOff image" id="bulb-off">
+        <button onclick="document.getElementById('bulb-off').src='./images/images.jpg'">Turn Off the bulb</button>
+    </div>-->
+
+    <img name="im" height="300" width="400">
+    <button onclick="on()">on</button>
+    <button onclick="off()">off</button>
+    <script>
+        //var display = document.getElementById('demo');
+        function on(){
+
+          document.im.src="././images/images.jpg"
+
+        }
+
+        function off(){
+            document.im.src="./images/light.jpg";
+        }
+    </script>
+
+    
+</body>
+</html

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    table,th,td{
+      
+    border-collapse: collapse;
+    border: 1px solid black;
+    }
+    table{
+      width: 50%;
+      text-align: center;
+      margin: auto;
+    }
+    img{
+      height: 100px;
+      width:100px;
+    }
+    th{
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <table class="mytable">
+      <thead id="tableh">
+        <tr>
+          <th>Id</th>
+          <th>lodgin</th>
+          <th>avathar</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+       
+      </tbody>
+    </table>
+  </div>
+  <script>
+    fetch("https://api.github.com/users").then((data)=>{
+      //console.log(data); json formate
+      return data.json(); //convert to object;
+    }).then((objectData)=>{
+      console.log(objectData[0].id);
+      var tableData = "";
+      objectData.map((values)=>{
+        //tableData += `<h1>${values.id}</h1>`;
+        tableData +=` <tr>
+          <td>${values.id}</td>
+                     <td>${values.login}</td>
+                     <td><img src="${values.avatar_url}"/></td>
+                     </tr>
+                     `
+      })
+      document.getElementById('table_body').innerHTML=tableData;
+    }).catch((err)=>{
+      console.log(err);
+    })
+  </script>
+</body>
+</html>

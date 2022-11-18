@@ -1,0 +1,103 @@
+
+<html>
+    <head>
+        <title>Ball Animation</title>
+        <style>
+            body {
+    background-color: #F5F5F5;
+    color: #555;
+    font-size: 1.1em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.element {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    background-color: #009966;
+    border-radius: 50%;
+    position: relative;
+    top: 0;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+.paused {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes bounce {
+    from {
+        top: 150px;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        top: 50px;
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    50% {
+        top: 200px;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    75% {
+        top: 75px;
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    to {
+        top: 150px;
+    }
+}
+
+@keyframes bounce {
+    from {
+        top: 150px;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        top: 50px;
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    50% {
+        top: 200px;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    75% {
+        top: 75px;
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    to {
+        top: 150px;
+    }
+}
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="element" id="element"></div>
+            <button id="toggle-animation">Toggle Animation Play State</button>
+          </div>
+          <script>
+            var button = document.getElementById('toggle-animation'),
+    el = document.getElementById('element');
+
+button.onclick = function(){
+  el.classList.toggle('paused');
+}
+        </script>
+    </body>
+</html>

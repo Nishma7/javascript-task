@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Factorial</title>
+</head>
+<body>
+
+    <script>
+         var display = prompt('Enter the Number');
+        var n = display;
+        function add(a){
+
+        if (n == 0) {
+            console.log("0! is 1");
+        }
+        else {
+            var factorialn = 1;
+            for (var i = 1; i <= n; i++) {
+                factorialn *= i;
+            }
+            console.log(`The Factorial of ${n} is ${factorialn}`);
+        }
+    }
+    add(n);
+    </script>
+    
+</body>
+</html>

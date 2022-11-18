@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Flag Hoisting</title>
+        <style>
+            .pole .stick{
+    width: 7px;
+    height: 500px;
+    background-color: silver;
+    border-radius: 10px;
+    position: relative;
+    left: 100px;
+    z-index: -1;
+}
+.basement .top{
+    width: 100px;
+    border-radius: 7px;
+    height: 24px;
+    margin: -5px 0 0 53px;
+    background-color: brown;
+}
+.basement .bottom{
+    width: 150px;
+    border-radius: 7px;
+    height: 24px;
+    margin: -5px 0 0 28px;
+    background-color: brown;
+}
+.btnContainer{
+    position: relative;
+    top: -23px;
+    left: 200px;
+}
+.flag{
+    background-image: url(images/flag.gif);
+    width: 105px;
+    height: 83px;   
+    position: absolute;
+    top: 8px;
+    left: 95px;
+    z-index: -2;
+    animation-name: hoisting;
+    animation-duration: 8s;
+    animation-play-state: paused;
+}
+@keyframes hoisting {
+    0%   {
+        top: 407px; 
+        width: 34px;
+        height: 33px;
+    }
+    10%  {top: 360px; width: 34px;
+        height: 33px;} 
+    20%  {
+        top: 320px; 
+        width: 34px;
+        height: 33px;
+    }
+    30%  {
+        top: 280px; 
+        width: 34px;
+        height: 33px;
+    }
+    40% {
+        top: 240px;
+        width: 34px;
+        height: 33px;
+    }
+    50%   {
+        top: 200px;
+         width: 34px;
+        height: 33px;
+    }
+    60%  {
+        top: 160px; 
+        width: 34px;
+        height: 33px;
+    } 
+    70%  {
+        top: 120px; 
+        width: 34px;
+        height: 33px;
+    }
+    80%  {
+        top: 80px; 
+        width: 34px;
+        height: 33px;
+    }
+    90% {
+        top: 40px; 
+        width: 34px;
+        height: 33px;
+    }
+    100% {top: 8px;    
+        width: 105px;
+        height: 83px;
+    }
+    
+  }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="pole">
+                <div class="stick"></div>
+                <div class="basement">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                </div>
+
+            </div>
+            <div class="flag" id="flag">
+            </div>
+            <div class="btnContainer">
+                <button id="playBtn">Hoist the Flag</button>
+                <button id="pauseBtn">Pause</button>
+            </div>
+        </div>
+        <script>
+            
+document.getElementById("playBtn").onclick = function() {
+    myPlayFunction();
+};
+document.getElementById("pauseBtn").onclick = function() {
+    myPauseFunction();
+};
+
+
+function myPlayFunction() {
+    document.getElementById("flag").style.animationPlayState = "running";
+  }
+  
+function myPauseFunction() {
+document.getElementById("flag").style.animationPlayState = "paused";
+}
+        </script>
+    </body>
+</html>

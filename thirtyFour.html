@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--34.Malayalm,Madam are palindrome or not?-->
+    <script>
+       /* var text = 'madam';
+        var toChange = text.toUpperCase();
+        console.log(toChange);
+        var changeArray = text.split("");
+        var reverseArr = changeArray.reverse();
+        var joinArr = reverseArr.join("");
+        console.log(joinArr);
+        var toUpper = joinArr.toLocaleUpperCase();
+        console.log(toUpper);
+
+        var result = (toChange == toUpper)?`${text} is a palindrom`:`${text} is not a palindrome`;
+        console.log(result); */$
+
+        var display = prompt("Enter the Word");
+        var upperCase = display.toUpperCase();
+        var splitName = display.split("");
+        var reverseName = splitName.reverse();
+        var joinName = reverseName.join("");
+        var arr = joinName.toUpperCase();
+        console.log(arr);
+        var palindrome = () => {
+            if (upperCase == arr) {
+                var print = `${upperCase} is Palindrome`;
+                console.log(print);
+            }
+            else {
+                var result = `${upperCase} is not a Palindrome`;
+                console.log(result);
+            }
+        }
+        palindrome();
+
+
+    </script>
+</body>
+</html>

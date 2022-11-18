@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1 2 3 4 4 3 2 1 
+        1 2 3 3 2 1
+        1 2 2 1
+        1 1
+    -->
+    <script>
+        var num =5;
+        var m =1;
+        for(i=1;i<=num;i++){
+        for(j=1;j<=num-i;j++){
+           document.write(j+" ");
+        }
+        for(k=num-i;k>=m;k--){  
+           document.write(k);
+        }
+       document.write("<br>");
+    }
+    </script>
+</body>
+</html>

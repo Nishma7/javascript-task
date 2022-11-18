@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--
+         1  
+         0 1
+         1 0 1
+         0 1 0 1
+         1 0 1 0 1
+    -->
+    <script>
+        var num = 5;
+        for (i = 1; i <= num; i++) {
+       if (i % 2 == 0) {
+           for (j = 1; j <= i; j++) {
+               document.write((j % 2 !== 0) ? "0 " : "1 ");
+           }
+       }
+       else {
+           for (j = 1; j <= i; j++) {
+               document.write((j % 2 == 0) ? "0 " : "1 ");
+           }
+       }
+       document.write("<br>");
+   }
+    </script>
+</body>
+</html>
