@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blur Image</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #container{
+            height: 590px;
+            width: 100%;
+            position: relative;
+        }
+        img{
+            animation: blur 4s;
+        }
+        h1{
+            position: absolute;
+            top: 240px;
+            left: 596px;
+            font-size: 60px;
+            color: #ddd;
+        }
+        @keyframes blur{
+            from{
+                filter: blur(10px);
+            }
+            25%{
+                filter: blur(7px);
+            }
+            50%{
+                filter: blur(2px);
+            }
+            to{
+                filter: blur(-2px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="./../ansha/leaf.jpg" height="100%" width="100%" alt="leaf">
+        <h1 id="demo"></h1>
+    </div>
+    
+    <script>
+        var i = 1;
+       var interval = setInterval( increment, 25);
+    function increment(){
+    i = i % 360 + 1;
+    document.getElementById('demo').innerHTML=i+"%";
+    if(i == 100){
+        clearInterval(interval);
+        //document.getElementById('container').style.filter="-2px";
+        document.getElementById('demo').style.display="none";
+    }
+}
+    </script>
+</body>
+</html>
