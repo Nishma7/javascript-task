@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>find the number of letters</title>
+    <style>
+        #box{
+            height:100px;
+            width: 500px;
+            background-color: aqua;
+            border: 2px solid red;
+            border-radius: 10%;
+            padding: 20px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="userName" onchange="getText()">
+        
+        <h2 id="result"></h2>
+        <h2 id="container"></h2>
+
+    </div>
+    <script>
+        /*write a program find the number of words in the input value;*/
+        function getText(){
+         var input = this.uname.value;
+         document.getElementById('result').innerHTML=`Input text is "${input}"`;
+         var count =0;
+         // use / /g to remove all spaces from the string
+         var remText = input.replace(/ /g, "");
+         console.log(remText);
+
+         for(var i=1;i<=remText.length;i++){
+             count++; 
+         }
+         document.getElementById("container").innerHTML =`Number of letters in the string is ${count}`;
+
+        }
+    </script>
+</body>
+</html>
