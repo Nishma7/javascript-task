@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3d boxes background</title>
+    <style>
+    
+        #container{
+            width: 500px;
+            margin: auto;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+        }
+        .gapAdd{
+            gap:20px;
+        }
+        .gapRemove{
+           gap:0;
+        }
+        #container>div{
+            height: 100px;
+            width: 100px;
+            background-image: url(./images/rose.gif);
+            background-size: 100%;
+            box-shadow: 10px 10px red;
+        }
+        .child{
+            animation: rotateBox 0.2s;
+        }
+        .changeDir{
+            animation: rotatAntiClockWise 0.2s;
+        }
+
+        button{
+            font-size: 50px;
+            background-color: hotpink;
+            color: white;
+            position: relative;
+            top:10px;
+            left: 527px;
+        }
+        @keyframes rotateBox{
+            from{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(120deg);
+            }
+            50%{
+                transform: rotate(240deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotatAntiClockWise{
+            from{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(-120deg);
+            }
+            50%{
+                transform: rotate(-240deg);
+            }
+            to{
+                transform: rotate(-360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="change()">Magic</button>
+    <div id="container" class="gapAdd">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+    <script>
+        var element = document.getElementById('container');
+        var childElement = document.querySelectorAll(".child");
+        function change(){
+             element.classList.toggle("gapRemove");
+             for(var i=0;i<childElement.length;i++){
+                childElement[i].classList.toggle("changeDir");
+             }
+        }
+    </script>
+</body>
+</html>
