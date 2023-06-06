@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Edit Delete</title>
+    <link href="addDataInLocalStorage.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+       <form onsubmit="addRow(event)">
+        <label for="fname" class="fName">First Name</label><br>
+        <input type="text" id="fname" name="fname" class="fName"><br>
+        <label for="lname" class="lName">Last Name</label><br>
+        <input type="text" id="lname" name="lname" class="lName"><br>
+        <label for="email" class="mail">E-mail</label><br>
+        <input type="email" id="email" name="email" class="mail"><br>
+        <input type="submit" id="submit" value="Add Row">
+       </form>
+    </div>
+    <div id="pre">
+        
+    </div>
+    <script src="addDataInLocalStorage.js"></script>
+</body>
+</html>

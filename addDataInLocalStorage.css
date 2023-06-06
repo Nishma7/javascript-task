@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+#container{
+    height: 300px;
+    width: 700px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 50px auto;
+    padding: 20px;
+}
+.fName{
+   font-size: 20px;
+   font-weight: bolder;
+   margin: 10px;
+   padding: 10px;
+}
+.lName{
+    font-size: 20px;
+   font-weight: bolder;
+   margin: 10px;
+   position: relative;
+   top:-88px;
+   left: 357px;
+   padding: 10px;
+}
+.mail{
+    font-size: 20px;
+   font-weight: bolder;
+   margin: 10px;
+   padding: 10px;
+}
+#submit{
+    position: relative;
+    top:-55px;
+    left:400px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+#box table{
+    margin:auto;
+}
+th,td{
+    border: 2px solid black;
+    
+}
