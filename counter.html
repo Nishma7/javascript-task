@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter</title>
+    <style>
+        #box{
+            height: 300px;
+            width:300px;
+            background-color: red;
+            border: 3px solid yellow;
+            border-radius: 5%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        #number{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            border: 2px solid yellow;
+            border-radius: 4%;
+            margin: auto;
+            margin-top: 93px;
+            font-size: 43px;
+        }
+        #text{
+            position: relative;
+            top: -60px;
+            left: 20px;
+        }
+        #decrement{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            position: relative;
+            top: -102px;
+            left: -52px;
+            font-size: 61px;
+        }
+        #increment{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            position: relative;
+            top: -102px;
+            left: 148px;
+            font-size: 61px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="number">
+            <h1 id="text"></h1>
+        </div>
+        <button id="decrement" onclick="decrement()">-</button>
+        <button id="increment" onclick="increment()">+</button>
+    </div>
+    <script>
+        var count=0;
+        document.getElementById('text').innerHTML=count;
+        function decrement(){
+            count--;
+            document.getElementById('text').innerHTML=count;
+        }
+
+        function increment(){
+            count++;
+            document.getElementById('text').innerHTML=count;
+        }
+    </script>
+</body>
+</html>
