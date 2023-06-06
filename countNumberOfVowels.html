@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Count the number of vowels in the world</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 300px;
+            background-color: aqua;
+            border: 3px solid red;
+            border-radius: 5%;
+            padding: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <label for="uname">Enter any text:</label>
+        <input type="text" id="uname" onchange="find()">
+        <h2 id="print"></h2>
+        <h2 id="letters"></h2>
+        <h2 id="count"></h2>
+
+    </div>
+    <script>
+        var vowels = ["a","e","i","o","u"];
+        function find(){
+            var result="";
+            var count=0;
+        var getText = this.uname.value;
+        var input = getText.toLowerCase();
+        document.getElementById('print').innerHTML=`Given text is "${getText}"`;
+        for(var i=0;i<vowels.length;i++){
+            for(var j=0;j<input.length;j++){
+                if(vowels[i] == input[j]){
+                   
+                    console.log(vowels[i]+input[j]);
+                    result +=vowels[i];
+                    count++;
+                }
+                document.getElementById('letters').innerHTML=`Vowels : ${result}.`;
+                document.getElementById('count').innerHTML=`Number of vowels ${count}`;
+            }
+            
+        }
+
+        }
+
+    </script>
+</body>
+</html>
