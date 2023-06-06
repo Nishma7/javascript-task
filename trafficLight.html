@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Traffic Light</title>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            border: 5px solid gray;
+            background-color: black;
+            border-radius: 50%;
+            margin: auto; 
+            position: relative;
+            top:40px;
+        }
+        input{
+            height: 50px;
+            width: 25%;
+            padding: 10px;
+            border-radius: 20%;
+            font-size:30px ;
+        }
+        label{
+            font-size: 50px;
+        }
+        .light{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: 5px solid gray;
+        }
+        #first{
+           margin: auto;
+           margin-top: 14px;
+        }
+       
+    </style>
+</head>
+<body>
+    <label for="color">Choose the color:</label>
+    <input type="text" id="color" name="color" onchange="selectColor()">
+    <div id="box">
+        <div class="light" id="first"></div>
+    </div>
+    <h2 id="result"></h2>
+    <script>
+        var colors = ["red","green","yellow"];
+        function selectColor(){
+        var input = this.color.value;
+        //document.getElementById('result').innerHTML=input;
+        for(var i=0;i<=colors.length;i++){
+            if(input == colors[i]){
+               // console.log(typeof input);
+               // console.log(typeof colors[i]);
+                document.getElementById('first').style.backgroundColor=colors[i];
+            }
+            else{
+                document.getElementById('first').style.backgroundColor="none";
+            }
+        }
+        }
+
+    </script>
+    
+</body>
+</html>
