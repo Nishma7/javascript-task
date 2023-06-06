@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Change Background with click the button</title>
+    <style>
+        button{
+            font-size: 40px;
+            position: relative;
+            top:222px;
+            left:556px;
+            padding: 30px 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="but" onclick="change()">Change Color</button>
+    <script>
+        /*
+        var buttonEle = document.getElementById('but');
+        var body = document.querySelector('body');
+        body.style.backgroundColor="violet";
+        var colors = ["red","orange","blue","green","yellow","hotpink","aqua"];
+
+        buttonEle.addEventListener('click',change);
+
+        function change(){
+            var random = parseInt(Math.random()*colors.length);
+            body.style.backgroundColor=colors[random];
+
+        }  
+        */
+        var count =0;
+        var body = document.querySelector('body');
+        var colors = ["red","orange","blue","green","yellow","hotpink","aqua"];
+        body.style.backgroundColor=colors[count];
+        function change(){
+            body.style.backgroundColor=colors[count];
+            count++;
+            if(count > colors.length-1){
+             count=0;
+            }
+        }
+
+    </script>
+</body>
+</html>
